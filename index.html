@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIxportControls · Exportkontrolle mit System</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230A1628'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%232563EB'>AX</text></svg>">
+<!-- pdf.js für PDF-Extraktion (optional & asynchron; App funktioniert auch offline ohne PDF-Support) -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+  onload="pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'"
+  onerror="console.warn('pdf.js offline nicht verfügbar – PDF-Upload deaktiviert')"></script>
+</head>
+<body>
+<div class="app">
+
+  <aside class="seitenleiste">
+    <div class="logo">
+      <div class="logo-titel">AI<span>xport</span>Controls</div>
+      <div class="logo-claim">Exportkontrolle. Vollständig. Nachweisbar.</div>
+    </div>
+    <nav class="nav">
+      <div class="nav-titel">Arbeitsbereich</div>
+      <a class="nav-link" href="#dashboard">▦ Dashboard</a>
+      <a class="nav-link" href="#vorgaenge">☰ Prüfvorgänge</a>
+      <a class="nav-link" href="#neu">+ Neuer Vorgang</a>
+      <div class="nav-titel">Schnellprüfung</div>
+      <a class="nav-link" href="#screening">⌕ Sanktionsliste</a>
+      <a class="nav-link" href="#embargo">◈ Embargo-Check</a>
+      <div class="nav-titel">Governance</div>
+      <a class="nav-link" href="#audit">≡ Audit Trail</a>
+      <a class="nav-link" href="#einstellungen">⚙ Einstellungen</a>
+    </nav>
+    <button class="btn-feedback" onclick="zeigeFeedback()">💬 Feedback geben</button>
+    <div class="seitenleiste-fuss">
+      MVP-Produktivumgebung · V1.0<br>
+      Basis: Pflichtenheft V3.1<br>
+      <a href="https://www.aixportcontrols.com" target="_blank" rel="noopener">aixportcontrols.com</a> · Ein Produkt der OHG-Group
+    </div>
+  </aside>
+
+  <main class="haupt">
+    <header class="kopfleiste">
+      <div class="kopf-status">
+        KI als Assistenzsystem · Human-in-the-Loop · Vier-Augen-Prinzip · Datenhaltung lokal (DE)
+      </div>
+      <div class="kopf-rechts">
+        <label style="margin:0;flex-direction:row;align-items:center;gap:8px;font-weight:400" class="klein">Angemeldet als
+          <select id="user-select"></select>
+        </label>
+      </div>
+    </header>
+    <div id="softgate-banner"></div>
+    <div id="view"></div>
+  </main>
+
+</div>
+<div id="toasts"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/lists.js"></script>
+<script src="js/extract.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/casefile.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
